@@ -1,0 +1,123 @@
+body {
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+#video-background {
+  position: fixed;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
+}
+
+#signUpLogIn {
+  background-color:  rgba(203, 237, 248, 0);
+  color: rgb(255, 255, 255);
+  border-color:  rgb(203, 237, 248);
+  color: white;
+}
+.modal-content {
+    font-family: 'Alegreya Sans SC', sans-serif;
+  }
+
+.modal-body {
+  background-color: white;
+}
+
+.modal-header {
+  background-color: white;
+}
+
+.modal-title {
+  margin-left: 35%;
+  background-color: white, 0.5;
+  
+}
+
+.btn btn-primary dropdown-toggle {
+  background-color: rgb(203, 237, 248);
+}
+
+.btn-primary {
+  color: gray;
+  background-color: rgb(203, 237, 248);
+  border-color: rgb(255, 254, 254);
+}
+
+.btn-primary:not([disabled]):not(.disabled).active, .btn-primary:not([disabled]):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: gray;
+    border-color: black;
+    box-shadow: 0 0 0 0.2rem gray;
+}
+
+.modal-footer {
+  margin-right: 40%;
+}
+
+#txtPassword {
+  width: 65.25%;
+}
+
+#txtEmail {
+  width: 74%;
+}
+
+#txtZipCode {
+  width: 69%;
+}
+
+#txtName {
+  width: 74%;
+}
+
+#txtEmailLogIn {
+  width: 70%;
+}
+
+.left-container {
+  margin-left: 9%;
+}
+
+#txtPasswordLogIn {
+  width: 62%;
+}
+
+.bg-dark {
+ background-color: #343a4046!important;; 
+}
+
+.txtMood {
+  margin-left: 10%;
+}
+
+.dropdown-menu {
+  margin-left: 10%;
+}
+
+.test {
+  margin-left: 10px;
+}
+
+.error{
+  color: red;
+}
+
+.navLogo {
+  height: 15%;
+  width: 15%;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
+  color: rgb(41, 41, 41);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.modalNav {
+  height: 35%;
+  width: 35%;
+}

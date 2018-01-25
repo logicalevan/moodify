@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>moodify - Setting the Mood</title>
+  
+  <!-- jquery source -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+     crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    
+    <!-- Bootstrap Javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <!-- firebase source -->
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="userproAssets/userpro.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img class="test" src="userproAssets/logo.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a id ="signOut" class="nav-link" href="#">Logout
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class= "row">
+        <div class= "col-lg-12 my-12">
+          <img src="userproAssets/cover.jpg" style="width:100%">
+        </div>
+      </div>
+    </div>
+
+   <!-- Header -->
+  <center><h2>Welcome to</h2></center>
+  <center><img id="logo-sizing" src="userproAssets/logo.png"></center>
+ <!-- POTENTIAL AUTO-FILL FOR USER NAME?
+   <center><div>Welcome <span id="nameInput"> to moodify</span>
+    </div></center>-->
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+     <center><div class="row">
+        <div class="col-lg-12">
+          <h3 class="mt-4">What is your mood today?</h3>
+        </div></center>
+      <br>
+
+            <!-- Mood Image Group -->
+      <center><div class="container">
+        <div class="row">
+          <div class="col-md-3 my-3">
+            <div class="thumbnail moodImage mood">
+              <img id="happy" class="imageMood" src="userproAssets/happy.jpg" data-name="happy" style="width:80%">
+              <br>
+              <h6>happy</h6>
+              </div>
+          </div>
+          <div class="col-md-3 my-3">
+            <div class="thumbnail moodImage mood">
+              <img id="sad" class="imageMood" src="userproAssets/sad.png" data-name="sad" style="width:75%">
+              <br>
+              <h6>sad</h6>
+              </div>
+          </div>
+          <div class="col-md-3 my-3">
+            <div class="thumbnail moodImage mood">
+                <img id="focus" class="imageMood" src="userproAssets/working.jpg" data-name="focus" style="width:65%">
+                <br>
+                <h6>focus</h6>
+                </div>
+              </div>
+          <div class="col-md-3 my-3">
+            <div class="thumbnail moodImage mood">
+              <img id="exercise" class="imageMood" src="userproAssets/exercise.jpg" data-name="excercise" style="width:65%">
+              <br>
+              <h6>workout</h6>
+            </div>
+          </div>
+        </div>
+      </div></center>
+      <br>
+
+      <!-- Div Insertion Fields -->
+    <center><div class="row">
+        <div class="col-lg-6 my-6">
+          <div id="spotify-div" class="thumbnail">
+         <!--      <a href="https://www.spotify.com/us/"></a> -->
+            <img class="card-img-top" src="userproAssets/play.jpg" alt="">
+           
+          </div>
+           <div class="card-footer">"moodify"
+            </div>
+        </div>
+
+        <!-- Events area -->
+        <div class="col-lg-6 my-6">
+          <div id="events" class="list-group">
+            <img class="card-img-top" id="eventImage" src="userproAssets/concert.jpg" alt="">
+             <table class="table table-hover" id='eventSchedule'>
+              <thead>
+                <tr>
+                  <th>Event</th>
+                  <th>Date</th>
+                  <th>Country</th>
+                  <th>City</th>
+                  <th>Venue</th>
+                </tr>
+              </thead>
+              <tbody id="List">
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </center>
+          <br>
+      
+        <!-- Div for Chart.js insertion -->    
+      <center>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-2 my-6">
+              </div>
+            </div>
+            <div class="col-lg-6 my-6">
+              <div id="chart-div" class="thumbnail">
+                <canvas id="myChart" width="400" height="400"></canvas>
+                <script>
+                  var sad=0;
+                  var happy=0;
+                  var focus=0;
+                  var exercise=0;
+                  $("#sad").on("click",function(){
+                    3 * sad++;
+                    chartGenerator();
+                  });
+                  $("#happy").on("click",function(){
+                    6 * happy++;
+                    chartGenerator();
+                  });
+                  $("#focus").on("click",function(){
+                    2 * focus++;
+                    chartGenerator();
+                  });
+                  $("#exercise").on("click",function(){
+                    11 * exercise++;
+                    chartGenerator();
+                  });
+              function chartGenerator(){
+                var ctx = document.getElementById("myChart").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ["Sad", "Happy", "Energetic", "Focused"],
+                        datasets: [{
+                            label: '# of Votes',
+                            data: [sad, happy, exercise, focus],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                            ],
+                            borderColor: [
+                                'rgba(255,99,132,1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                 });
+                 }
+
+
+
+           
+                </script>
+                
+              </div>
+            </div>
+            <div class="col-lg-2 my-6">
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </center>
+      <br>
+      
+        <!-- Footer -->
+      <center>
+        <h7>Powered by Team Crimson Chinchilla, dba. Berners-Lee, © 2018</h7>
+      </center>
+    
+    <script src="userproAssets/userpro.js"></script>
+    
+  </body>
+
+</html>

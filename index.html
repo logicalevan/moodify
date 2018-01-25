@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>moodify - Setting the Mood</title>
+
+    <!-- jquery source -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+     crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    
+    <!-- Bootstrap Javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="indexAssets/welcome.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" rel="stylesheet">
+
+    <!-- firebase source -->
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+
+  </head>
+
+<body>
+
+  <!-- navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img class="navLogo" src="indexAssets/logo.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+             <button type="button" id="signUpLogIn" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Sign Up/Log In</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- background video -->
+    <div>
+      <video autoplay loop id="video-background" plays-inline>
+          <source src="indexAssets/background.mp4" type="video/mp4">
+      </video>
+    </div>
+
+  <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+     <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <center></center><div class="modal-content">
+      <div class="modal-header">
+   
+      <center><img class="modalNav" src="indexAssets/logo.png"></center>
+      </div>
+      
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+
+        <!-- sign up -->
+        <div class="col-md-6">
+          <div class="left-container">
+        <div class="sectionTitle">Sign Up</div>
+        <div id="inputValidationMessageSU" class="error"></div>
+        <form>
+            <label for="name">Name</label>
+            <input type="name" id="txtName"><br>
+        </form>
+        <form>
+            <label for="email">Email</label>
+            <input type="email" id="txtEmail"><br>
+        </form>
+        <form>
+            <label for="password">Password</label>
+          <input type="password" id="txtPassword"><br>
+        </form>
+        <form>
+            <label for="zipCode">Zip Code</label>
+          <input type="zipCode" id="txtZipCode"><br>
+        </form>
+        <div class="modal-footer">
+          <button type="button" id="btnSignUpVerify" class="btn btn-default">Verify</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" id="btnSignUpSubmit" class="btn btn-default">Submit</button>
+        </div>
+        </div>
+      </div>
+        <!-- end sign up -->
+
+        <!-- log in -->
+        <div class="col-md-6">
+          <div class="sectionTitle">Log In</div>
+          <div id="inputValidationMessageLI" class="error"></div>
+          <form id="search-form">
+            <label for="email">Email</label>
+            <input type="email" id="txtEmailLogIn"><br>
+          </form>
+          <form id="search-form">
+            <label for="password">Password</label>
+            <input type="password" id="txtPasswordLogIn"><br>
+          </form>
+          <div class="modal-footer">
+            <button type="button" id="btnLogInVerify" class="btn btn-default">Verify</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="btnLogInSubmit" class="btn btn-default">Submit</button>
+          </div>
+        </div>
+    </div>
+
+  </div>
+  <!-- end modal -->
+
+  
+    
+
+    <script src="indexAssets/modal.js"></script>
+</body>
+
+</html>
